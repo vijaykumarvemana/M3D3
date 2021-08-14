@@ -184,7 +184,7 @@
             This page will dynamically load pictures from the web, and display
             them in a cool way!
           </p>
-          <input type="text" placeholder="search..." />
+          <input id="input-value" type="text" onsubmit="inputValue()"  placeholder="search..." />
           <p>
             <a id="loadButton" href="#" class="btn btn-primary my-2"
               >Load Images</a
@@ -220,6 +220,11 @@
       // const client = createClient('YOUR_API_KEY');
 
       // All requests made with the client will be authenticated
+
+      const searchvalue = document.getElementById("input-value").value
+     
+        
+      
 
       fetch("https://api.pexels.com/v1/search?query=dog", {
         method: "GET",
@@ -345,12 +350,19 @@
           }
         });
       };
+    
 
       function hideFunction(evt) {
         let hideEvent = evt.target.closest(".disappear");
         hideEvent.remove();
         console.log(hideEvent);
+
       }
+
+   
+     
+     
+
     </script>
 
     <script
